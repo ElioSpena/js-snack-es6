@@ -62,3 +62,23 @@ Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più p
 La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri. Non usare i metodi di array di JS
  */
 
+
+const arrayBands = ["Nirvana", "Tool", "Bob Marley", "Pino Daniele", "Beatles", "Led Zeppelin"];
+const getArray = getArrayBetween(arrayBands, 2, 4);
+
+
+
+function getArrayBetween(array, x, y) {
+
+    let resultArray = [];
+    for (let i = 0; i < array.length; i++) {
+        const curIndex = i;
+        const curElem = array[i];
+        if (curIndex >= x && curIndex <= y) {
+            resultArray.push(curElem);
+        }
+    }
+    return resultArray;
+}
+
+console.log(getArray);

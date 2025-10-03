@@ -82,3 +82,42 @@ function getArrayBetween(array, x, y) {
 }
 
 console.log(getArray);
+
+
+/* Scrivi una funzione che fonda due array
+prendendo alternativamente gli elementi da uno e dall’altro
+es. [a,b,c], [1,2,3,4,5] → [a,1,b,2,c,3,4,5].
+ */
+
+const letters = ["a", "b", "c", "d", "e"];
+const numbers = ["1", "2", "3"];
+const melting = alternateMelting(letters, numbers);
+
+function alternateMelting(lettersArray, numbersArray) {
+
+    let meltedArray = [];
+    let length;
+
+    if (lettersArray.length > numbersArray.length) {
+        length = lettersArray.length;
+    } else {
+        length = numbersArray.length;
+    }
+
+    for (let i = 0; i < length; i++) {
+
+        const curLetter = lettersArray[i];
+        const curNumber = numbersArray[i];
+
+        if (i < lettersArray.length) {
+            meltedArray.push(curLetter);
+        }
+        if (i < numbersArray.length) {
+            meltedArray.push(curNumber);
+        }
+    }
+    return meltedArray;
+}
+
+console.log(melting);
+
